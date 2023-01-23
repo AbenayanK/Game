@@ -1,3 +1,21 @@
+//1. Make a dice roller, that allows you to roll 5 dice, 4 times
+// 2. When you roll the dice you have 3 options
+     // 1. Reroll
+    //  2. Swap
+    //  3. Get Points
+// 3. If you reroll, it allows you to reroll the dice you have rerollen, if u swap, then you choose the dice/dices you wish to keep, 
+    //then you will get to reroll the ones you didn't
+
+//4. Repeat until user chooses Get Points or reaches 4 spins
+// 5. When user does so they will be given a menu with the possible combinations they can recieve
+// 6. The user will select the combination they wish to recieve
+//7. The second user goes
+//8. Game repeats, each time the user's have points in the same combinations, whoever has the higher points will recieve a chance to spin a wheel of fortune wheel.
+//9. The Wheel is spun and the user collects cash/lose a turn/bankrupt
+//10. Game continues until all combinations have been filled
+// 11. The user with the highes cash left moves onto bonus round.
+// 12. Give the user 50 words that they need to guess(Wheel of fortune)
+
 import java.util.Scanner;
 import java.util.Random;
 
