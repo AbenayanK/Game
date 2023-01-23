@@ -15,6 +15,7 @@
 //10. Game continues until all combinations have been filled
 // 11. The user with the highes cash left moves onto bonus round.
 // 12. Give the user 50 words that they need to guess(Wheel of fortune)
+// 13. If the user guesses the word correctly they win
 
 import java.util.Scanner;
 import java.util.Random;
