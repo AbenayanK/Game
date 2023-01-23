@@ -17,6 +17,11 @@
 // 12. Give the user 50 words that they need to guess(Wheel of fortune)
 // 13. If the user guesses the word correctly they win
 
+
+// You can use methods, strings, arrays, while loops, for loops
+// We can not use parseint, breaks, .split, or for-each loops
+
+
 import java.util.Scanner;
 import java.util.Random;
 
