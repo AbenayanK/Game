@@ -1,71 +1,87 @@
-//1. Make a dice roller, that allows you to roll 5 dice, 4 times
-// 2. When you roll the dice you have 3 options
-     // 1. Reroll
-    //  2. Swap
-    //  3. Get Points
-// 3. If you reroll, it allows you to reroll the dice you have rerollen, if u swap, then you choose the dice/dices you wish to keep, 
-    //then you will get to reroll the ones you didn't
 
-//4. Repeat until user chooses Get Points or reaches 4 spins
-// 5. When user does so they will be given a menu with the possible combinations they can recieve
-// 6. The user will select the combination they wish to recieve
-//7. The second user goes
-//8. Game repeats, each time the user's have points in the same combinations, whoever has the higher points will recieve a chance to spin a wheel of fortune wheel.
-//9. The Wheel is spun and the user collects cash/lose a turn/bankrupt
-//10. Game continues until all combinations have been filled
-// 11. The user with the highes cash left moves onto bonus round.
-// 12. Give the user 50 words that they need to guess(Wheel of fortune)
-// 13. If the user guesses the word correctly they win
+//Author: Abenayan Kathirgamanathan
+//Date: 20/01/2023
+//Description: 
+	import java.util.Random;
+	import java.util.Scanner;
 
+	public class Yahtzee {
 
-// You can use methods, strings, arrays, while loops, for loops
-// We can not use parseint, breaks, .split, or for-each loops
+	    public static void main(String[] args) {
+	    	  Scanner input = new Scanner(System.in);
+
+	    	    System.out.print("WELCOME TO YAHTZY!!");
+	    	    System.out.println("");
+
+	    	    //Ask User if they would like to play//
+	    	    System.out.print("Would you like to play?(Yes/No): ");
 
 
-import java.util.Scanner;
-import java.util.Random;
+	    	    String start_play = input.next();
 
-public class Main {
-    public static void main(String[] args) {
-        Random rand = new Random();
-        Scanner input = new Scanner(System.in);
-        int[] dice = new int[5];
-        int[] hand = new int[5];
-        int rollCount = 1;
+	    	    //Loop is set so that unless the user gives a proper answer, the question will be asked again
+	    	    while (!(start_play.equalsIgnoreCase("Yes")|| start_play.equalsIgnoreCase("No"))) {
+	    	        System.out.print("Please Enter a valid response(Yes/No)");
+	    	        System.out.print("Would you like to play?: ");
+	    	        start_play = input.next();
+	    	    }
+	    		System.out.println("\nTo See Instructions: Press 1 \nTo Begin Playing: Press 2 \n");			
+				
+	    	    while (!(start_play.equalsIgnoreCase("1")|| start_play.equalsIgnoreCase("2"))) {
+	    			System.out.print("Enter: ");			
+	    			start_play = input.next();
 
-        while (rollCount <= 3) {
-            System.out.println("Roll " + rollCount);
-            for (int i = 0; i < dice.length; i++) {
-                dice[i] = rand.nextInt(6) + 1;
-                System.out.print(dice[i] + " ");
-            }
-            System.out.println();
-            System.out.print("Would you like to roll again? ");
-            String rollagain= input.next();
-            if (rollagain.equalsIgnoreCase("No")){
-              rollCount = 4;
-            }
-            else{
-              System.out.print("Please enter the number of dice you would like to hold: ");
-              int numOfdiceHeld = input.nextInt();
-              for(int i = 0;i<numOfdiceHeld;i++){
-                int indexOfDie;
-                do{
-                System.out.print("Enter the index of the dice that you would like to hold: ");
-                indexOfDie = input.nextInt();
-                }while(indexOfDie>=0 && indexOfDie <=5);
-                hand[i] = dice[indexOfDie];
-              }
-              for(;i<5;i++){
-                hand[i] = rand.nextInt(7)+1;
-              }
-            }
-            // prompt user to enter which dice to re-roll
-            // code to re-roll selected dice here
+	    		if (start_play.equals("1")) {
+	    			instructions();
+	    			//yahtzee(playDie, points, finalPoints, booleanArr, turnTracker, counterScore);
+	    		}
+	    		
+	    		if (start_play.equals("1")) {
+	    			//yahtzee(playDie, points, finalPoints, booleanArr, turnTracker, counterScore);
+	    		}
+	    	}
+	    }	    
+	    
+	    public static void instructions(){
+	    	System.out.println("\nInstructions:\n"
+					+ "\nYou will begin the game by rolling five dice. "
+					+ "\nChoose which dice you want to reroll and click the \"Reroll\" button. You can do this four times. "
+					+ "\nOnce you do so, you will choose a catergory to score, from the options avlaible\n"
+					+"\n\t\t Upper section combinations"
+					+ "\n\t1. Ones: Get as many ones as possible.\n"
+					+ "\n\t2. Twos: Get as many twos as possible.\n"
+					+ "\n\t3. Threes: Get as many threes as possible.\n"
+					+ "\n\t4. Fours: Get as many fours as possible.\n"
+					+ "\n\t5. Fives: Get as many fives as possible.\n"
+					+ "\n\t6. Sixes: Get as many sixes as possible.\n"
+					+ "\n\t3. Three of a kind: Get three dice with the same number. Points are the sum all dice (not just the three of a kind).\n"
+					+ "\n\t4. Four of a kind: Get four dice with the same number. Points are the sum all dice (not just the four of a kind).\n"
+					+ "\n\t5. Small Straight: Get four sequential dice, 1,2,3,4 or 2,3,4,5 or 3,4,5,6. Scores 30 points.\n"
+					+ "\n\t6. Large Straight: Get five sequential dice, 1,2,3,4,5 or 2,3,4,5,6. Scores 40 points.\n"
+					+ "\n\t7. Chance: You can put anything into chance. The score is the sum of the dic.\n"
+					+ "\n\t8. Yahtzee: Five of a kind. Scores 50 points. You can optionally get multiple Yahtzees, see below for details.\n"
+					+ "\t\t\n"
+					+ "\nOnce all scoring categories have been used, your final score will determine the outcome of the game.\n"
+					+ "\nOnce the score for both categories are met in the upper combinations or in the Four of a kind, Three of a kind or Chance categories\n"
+					+ "\nThey get a chance to spin the wheel, which will have cash amounts and may have lose a turn or bankruptcy \n"
+					+ "\n\tLose a turn: When recieved, the player who spun will not be able to go for their next turn\n"
+					+ "\n\tBankruptcy: The player loses the current amount of money they have \n"
+					+ "\nAt the very end, whoever has the most amount of money will move on to the bonus round)\n"
+					+ "\t\t\n"
+					+ "\tBonus Round\n"
+					+ "\t\t\n"
+					+ "\tIn this round you will be given a word to solve, if you get the word then you will recieve the cash prize and your grand total will be displayed\n"
+					+ "\nGood luck and let the games begin!");
+		}
 
-            rollCount++;
-        }
-
-        // code to calculate score and determine winner here
-    }
+		private static void userChoices(int[] playDie, int[] points, int[] finalPoints, boolean[] booleanArr,
+				int turnTracker, int rollCount, int[] playingCounter) {
+					Scanner sc = new Scanner(System.in);
+					int option = 0;
+					displayDice(playDie);
+					System.out.println(" \nMoves:"
+							+ "\n 1 - Score Now"
+							+ "\n 2 - Reroll\n");
 }
+	}
+	
