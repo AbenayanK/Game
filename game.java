@@ -85,3 +85,75 @@
 }
 	}
 	
+	//Explain the rules of the game //
+	
+	//BONUS Round//
+	
+	/*    Scanner input = new Scanner(System.in);
+
+    //Mystery word, medicine, is intialized
+
+    String mysteryWord = "medicine";
+    String guess;
+
+    //Guesscount- the counter for the number of guesses is set to 0.
+
+    int guessCount = 0;
+
+    //Make the limit for the number of guesses 5.
+
+    int guessLimit = 5;
+
+    boolean outOfGuesses = false;
+    boolean correctGuess = false;
+    System.out.println("* note the word is all lowercase and doesn't contain special characters");
+
+    // While the user is not out of guesses and the user has not guessed the word correctly, the user will be able to guess the word
+    while(!outOfGuesses && !correctGuess){
+       // if the guessCount is less than the guessLimit then the user can guess the word
+        if(guessCount < guessLimit){
+            System.out.println("You have " + (guessLimit - guessCount) + " guesses left. Enter guess: ");
+            guess = input.nextLine();
+            guessCount++;
+            if(guess.length() > mysteryWord.length()){
+                System.out.println("Guess too long");
+            } else if(guess.length() < mysteryWord.length()){
+                System.out.println("Guess too short");
+            } else {
+           
+                for(int i = 0; i < guess.length(); i++){
+                    if(guess.charAt(i) == mysteryWord.charAt(i)){
+                        System.out.print("!");
+                    } else if(mysteryWord.contains(String.valueOf(guess.charAt(i)))){
+                        System.out.print("?");
+                    } else {
+                        System.out.print("-");
+                    }
+                }
+           
+                System.out.println();
+            // if the guess is equal to the mystery word then the user wins
+
+                if(guess.equals(mysteryWord)){
+                    correctGuess = true;
+            //if the unicode value of the guess is less than mystery, meaning it will return a number less than zero then the word is after
+                } else if(guess.compareTo(mysteryWord) < 0){
+                    System.out.println("Mystery word is after your last guess");
+                } else {
+            //if the unicode value of the guess is greater than the mystery word, then it will return a number greater than zero, meaning the word is before the  guess
+                    System.out.println("Mystery word is before your last guess");
+                }
+            }
+            // if the guessCount is greater than the guessLimit then the user loses
+        } else {
+            outOfGuesses = true;
+        }
+    }
+ //if the user is out of guesses, there are told so and they are told what the word is 
+    if(outOfGuesses){
+        System.out.println("You are out of guesses. The word was " + mysteryWord);
+    } else {
+//if the user makes the correct guess, they are told so and they are thanked 
+
+        System.out.println("You are correct! \nThank you for playing");
+    }*/	
